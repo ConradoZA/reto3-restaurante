@@ -23,6 +23,9 @@ def take_away():
 
         print("\nTotal hasta ahora: %f" % round(total, 2))
         new = int(input("Seleccione plato: "))
+        if new > len(dishes):
+            print("\nNo existe ese plato.\n")
+            continue
         command.append(dishes[new - 1])
         total += prices[new - 1]
         check_order = int(input("¿Quiere pedir más platos? (1:sí, 0:no) "))
